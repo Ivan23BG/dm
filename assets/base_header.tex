@@ -1,0 +1,63 @@
+% ==============================================================================
+% FONT & LANGUAGE SETTINGS
+% ==============================================================================
+
+\usepackage[T1]{fontenc}         % T1 font encoding: better European support
+\usepackage[french]{babel}       % French language support
+\usepackage{lmodern}             % Latin Modern font
+
+% ==============================================================================
+% LISTS & ENUMERATION
+% ==============================================================================
+
+\usepackage[shortlabels]{enumitem} % Customizable lists
+\setlist[itemize,1]{label={\color{gray}\small \textbullet}}
+
+% ==============================================================================
+% PAGE LAYOUT & SECTIONING
+% ==============================================================================
+
+\usepackage[a4paper,hmargin=30mm,vmargin=30mm]{geometry}
+
+% ==============================================================================
+% MATHEMATICS & SYMBOLS
+% ==============================================================================
+
+\usepackage{centernot}           % Centered negation symbols
+\usepackage[overload]{abraces}   % Extensible braces for math expressions
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{mdframed}
+
+% ==============================================================================
+% COLOR MANAGEMENT
+% ==============================================================================
+
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+\definecolor{astral}{RGB}{46,116,181}             % Blue shade
+\definecolor{verdant}{RGB}{96,172,128}            % Green shade
+\definecolor{algebraic-amber}{RGB}{255,179,102}
+\definecolor{calculus-coral}{RGB}{255,191,191}
+\definecolor{divergent-denim}{RGB}{130,172,211}
+
+% ==============================================================================
+% SECTIONING
+% ==============================================================================
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\allsectionsfont{\color{astral}\sffamily\bfseries}
+\setlength{\parindent}{0pt}
+
+% ==============================================================================
+% HYPERLINKS
+% ==============================================================================
+
+\usepackage{hyperref}
+\usepackage[all]{hypcap}

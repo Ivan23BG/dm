@@ -1,0 +1,26 @@
+\section{Conjecture de Goldbach}\label{sec:dm2-goldbach}
+
+\begin{td-exo}[Preuve informelle d'une somme de points]\,\\
+  On se donne des \(n\) points sur une droite. Décrire un algorithme
+  qui détermine le plus petit sous-ensemble de points dont la somme
+  des longueurs d'un segment est \(k\).
+\end{td-exo}
+
+\begin{td-sol}[]
+  On construit un arbre de recherche, puis on procède par énumération
+  du plus court chemin vers la racine.
+\end{td-sol}
+
+\section{Thème d'apprentissage : Programmation dynamique}\label{sec:dm2-dp}
+
+\begin{td-exo}[Problème de bin packing]\,\\
+  Soient \(B\) bins et \(I\) items d'intérêt \(w_1, \dots, w_n\).
+  Expliquer comment construire un programme dynamique en temps polynomial
+  en \(|I|\) et \(B\).
+\end{td-exo}
+
+\begin{td-sol}[]
+  On définit \(OPT(i, b)\) comme le plus grand gain d'un subset de
+  l'ensemble \(I\) à \(i\) éléments dans le bin \(b\).
+  \(OPT(i, b) = \max\{ OPT(i-1, b), \; w_i + OPT(i-1, b - w_i) \}\).
+\end{td-sol}

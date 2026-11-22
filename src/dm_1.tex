@@ -1,0 +1,29 @@
+\section{Complexité des graphes}\label{sec:dm1-complexité}
+
+\subsection{Conjecture de la sommet cover}\label{subsec:dm1-sommet-cover}
+\begin{td-exo}[Hypothèse P=NP]\,\\
+  \emph{Isoler le problème}: donner une propriété de \(G\) équivalente
+  à \(|E(G)| > k\).
+  \emph{Diagonalisation}: construire un problème qui n'est ni décidable,
+  ni indécidable, en supposant P = NP.
+\end{td-exo}
+
+\begin{td-sol}[]
+  \emph{Isolation :} \(|E(G)| > k\) se décide en temps polynomial
+  en \(|V(G)|\) et \(k\).
+  \emph{Diagonalisation :} par l'argument de séparation d'Oracle.
+\end{td-sol}
+
+\subsection{Points extrêmes de \(\mathbb{Z}_k\)}\label{subsec:dm1-points-extrêmes}
+\begin{td-exo}[\(k\)-sets à \((k,2)\)-sets]\,\\
+  Soient \(A, B\) des ensembles disjoints de \(V(G)\). Montrer qu'une
+  \(\binom{n}{k}\)-partition de \(G\) admet un élément \(C_i\) tel que
+  \(C_i\) couvre des arêtes à \(2^k\) de \(G \setminus (A \cup B)\).
+\end{td-exo}
+
+\begin{td-sol}[]
+  Soit \(\mathcal{C} = \{C_1, \dots, C_k\}\) une famille de \(k\)-sets
+  disjoints couvrant \(G\). Construire \(\mathcal{F} = \{F_1, \dots, F_t\}\)
+  avec \(t \le 2^k\) des \((k, 2)\)-sets dans le graphe \(G \setminus A\).
+  Alors \(\mathcal{F}\) couvre \(G \setminus B\) en \(O(n^k)\).
+\end{td-sol}

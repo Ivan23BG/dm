@@ -1,0 +1,33 @@
+\documentclass[french,a4paper,10pt]{article}
+\input{base_header.tex}
+\input{math/base.tex}
+\input{environments/base.tex}
+\input{tikz/base.tex}
+\input{themes/more_colours.tex}
+
+% ---- latex_handler theme support ------------------------------------------
+\providecommand{\lhtheme}{light}
+\def\lhdarkvalue{dark}
+\definecolor{lhlightaccent}{HTML}{1F4E79}
+\definecolor{lhdarkaccent}{HTML}{E8A33D}
+\colorlet{lhaccent}{lhlightaccent}
+\def\lhthemevalue{Light}
+\ifx\lhtheme\lhdarkvalue
+  \colorlet{lhaccent}{lhdarkaccent}
+  \def\lhthemevalue{Dark}
+\fi
+% ---------------------------------------------------------------------------
+
+\toggletrue{showsolutions} % Permet d'afficher les solutions (voir dm_content)
+
+\title{\color{astral} \sffamily \bfseries Devoirs Maison}
+\author{Votre Nom}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\input{./dm_content.tex}
+
+\end{document}

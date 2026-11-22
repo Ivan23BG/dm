@@ -1,0 +1,5 @@
+name = "dm"
+version = "1.0.0"
+description = "Feuille de devoirs maison (DM) — exercices numériques avec énoncés et solutions (basé sur les DM M1)."
+authors = ["Ivan23BG"]
+repository = "https://github.com/Ivan23BG/dm.git"

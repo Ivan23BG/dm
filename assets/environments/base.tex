@@ -1,0 +1,103 @@
+% ==============================================================================
+% THEOREM STYLE DEFINITIONS
+% ==============================================================================
+
+% --- Default theorem style: bold sans-serif head, centered on its line ---
+\newtheoremstyle{default}{\topsep}{\topsep}%
+    {}% Body font
+    {}% Indent amount (empty = no indent)
+    {\sffamily\bfseries}% Theorem head font
+    {.}% Punctuation after theorem head
+    { }% Space after theorem head
+    {\thmname{#1}\thmnumber{~#2}\thmnote{~#3}}% Head specification
+
+% --- Non-numbered theorem style ---
+\newtheoremstyle{nonum}{\topsep}{\topsep}%
+    {}%
+    {}%
+    {\sffamily\bfseries}%
+    {.}%
+    { }%
+    {\thmname{#1}\thmnote{~#3}}%
+
+% ==============================================================================
+% \mytheorem MACRO
+% ==============================================================================
+
+% \mytheorem{name}{Display Name}{color}{counter}{type}
+% Defines a left-accented theorem environment using mdframed.
+% - If type is 'o', uses a standalone counter.
+% - Otherwise, the counter is attached to the enclosing section.
+\newcommand{\mytheorem}[5]{%
+  \ifstrequal{#5}{o}{% Standalone counter
+    \newmdtheoremenv[
+      hidealllines=true,
+      leftline=true,
+      skipabove={5},
+      innertopmargin={0.1},
+      innerbottommargin=5pt,
+      linewidth=4pt,
+      linecolor=#3,
+      backgroundcolor=theorembg,
+      fontcolor=theoremtext,
+      % linewidthcolor=theoremframe,
+    ]{#1}[#4]{#2}%
+  }{% Dependent counter
+    \newmdtheoremenv[
+      hidealllines=true,
+      leftline=true,
+      skipabove={5},
+      innertopmargin={0.1},
+      innerbottommargin=5pt,
+      linewidth=4pt,
+      linecolor=#3,
+      backgroundcolor=theorembg,
+      fontcolor=theoremtext,
+      % linewidthcolor=theoremframe,
+    ]{#1}{#2}[#4]%
+  }%
+}
+
+% ==============================================================================
+% THEME COLORS
+% ==============================================================================
+
+\definecolor{theorembg}{gray}{0.98}
+\definecolor{theoremframe}{gray}{0.7}
+\definecolor{theoremtext}{gray}{0.1}
+
+% ==============================================================================
+% GLOBAL THEOREM ENVIRONMENTS
+% ==============================================================================
+
+\theoremstyle{default}
+\mytheorem{theorem}{Théorème}{astral}{}{}
+\mytheorem{definition}{Définition}{verdant}{}{}
+\mytheorem{proposition}{Proposition}{verdant}{}{}
+\mytheorem{lemma}{Lemme}{astral}{}{}
+\mytheorem{example}{Exemple}{verdant}{}{}
+\mytheorem{remark}{Remarque}{verdant}{}{}
+
+\theoremstyle{nonum}
+\mytheorem{interp}{Interprétation}{verdant}{}{}
+\mytheorem{notation}{Notation}{verdant}{}{}
+
+% ==============================================================================
+% TD SHEETS: exercise / solution containers
+% ==============================================================================
+
+\newtoggle{showsolutions}
+\newcounter{tdcounter}
+\counterwithout{tdcounter}{section}
+
+\mytheorem{td-exo}{Exercice}{astral}{tdcounter}{o}
+\mytheorem{td-sol}{Solution}{verdant}{}{}
+
+% ==============================================================================
+% LIST OF ALGORITHMS / PROBLEMS
+% ==============================================================================
+
+\newlist{listofalgorithms}{description}{0}
+\setlist[listofalgorithms]{nosep, label={}}
+\newlist{listofproblems}{enumerate}{0}
+\setlist[listofproblems]{nosep}
